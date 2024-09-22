@@ -1,0 +1,41 @@
+﻿.contact {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: #f2f6ff;
+}
+
+.br {
+    padding-bottom: 50px;
+}
+
+.text-input {
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #355e9b;
+}
+
+.bt-mee {
+    width: 100%;
+    border-radius: 70px;
+    padding: 10px;
+    border: 1px solid #355e9b;
+    color: #355e9b;
+    background-color: transparent;
+}
+
+.fadeInUpzer {
+    padding-top: 30px;
+    max-width: 900px;
+}
+
+.contact-content {
+    max-width: 900px;
+}
+
+.fadeInUpzer {
+    display: flex;
+    justify-content: center;
+}

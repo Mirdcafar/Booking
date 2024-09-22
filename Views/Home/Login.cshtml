@@ -1,0 +1,31 @@
+﻿@model Shop.Models.User
+
+<section class="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="contact-content">
+                <h5>LogIn</h5>
+            </div>
+            <div class="fadeInUpzer">
+                <form class="main-form" method="post">
+                    <div class="row">
+                        
+                        <div class="col-lg-12">
+                            <input asp-for="Email" type="email" placeholder="Email*" class="text-input my-2" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-12 br">
+                            <input asp-for="Password" type="password" placeholder="Password*" class="text-input my-2" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="bt-mee">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

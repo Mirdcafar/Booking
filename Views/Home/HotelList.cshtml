@@ -1,0 +1,151 @@
+﻿@model HotelCategoryFilterViewModel
+
+@{
+    ViewData["Title"] = "HotelList Policy";
+}
+
+
+
+<div class="bg position">
+    <div class="container">
+        <div class="title">
+            <h1>Find your next stay</h1>
+            <p>Search deals on hotels, homes, and much more...</p>
+        </div>
+    </div>
+    <div class="container cont mt-5">
+        <form method="post" asp-action="HotelList" class="search-container row ">
+            <div class="search-input col-lg-3 col-12">
+                <label for="destination" class="form-label">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M2.75 12h18.5c.69 0 1.25.56 1.25 1.25V18l.75-.75H.75l.75.75v-4.75c0-.69.56-1.25 1.25-1.25m0-1.5A2.75 2.75 0 0 0 0 13.25V18c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 18v-4.75a2.75 2.75 0 0 0-2.75-2.75zM0 18v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 0 18m22.5 0v3a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0m-.75-6.75V4.5a2.25 2.25 0 0 0-2.25-2.25h-15A2.25 2.25 0 0 0 2.25 4.5v6.75a.75.75 0 0 0 1.5 0V4.5a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 0 1.5 0m-13.25-3h7a.25.25 0 0 1 .25.25v2.75l.75-.75h-9l.75.75V8.5a.25.25 0 0 1 .25-.25m0-1.5A1.75 1.75 0 0 0 6.75 8.5v2.75c0 .414.336.75.75.75h9a.75.75 0 0 0 .75-.75V8.5a1.75 1.75 0 0 0-1.75-1.75z">
+                        </path>
+                    </svg>
+                </label>
+                <select class="form-control" name="country" asp-items="ViewBag.Country"></select>
+            </div>
+
+            <div class="search-input col-lg-2 col-12">
+                <label for="inputDates" class="form-label">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M22.5 13.5v8.25a.75.75 0 0 1-.75.75H2.25a.75.75 0 0 1-.75-.75V5.25a.75.75 0 0 1 .75-.75h19.5a.75.75 0 0 1 .75.75zm1.5 0V5.25A2.25 2.25 0 0 0 21.75 3H2.25A2.25 2.25 0 0 0 0 5.25v16.5A2.25 2.25 0 0 0 2.25 24h19.5A2.25 2.25 0 0 0 24 21.75zm-23.25-3h22.5a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5M7.5 6V.75a.75.75 0 0 0-1.5 0V6a.75.75 0 0 0 1.5 0M18 6V.75a.75.75 0 0 0-1.5 0V6A.75.75 0 0 0 18 6M5.095 14.03a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06m.53-1.28a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5m-.53 6.53a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06m.53-1.28a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5m5.845-3.97a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06m.53-1.28A1.125 1.125 0 1 0 12 15a1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5m-.53 6.53a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06M12 18a1.125 1.125 0 1 0 0 2.25A1.125 1.125 0 0 0 12 18a.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5m5.845-3.97a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06m.53-1.28a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5">
+                        </path>
+                    </svg>
+                </label>
+                <input type="text" name="checkInDate" class="form-control" id="inputDates" placeholder="Check-in Date" value="@ViewBag.Message">
+            </div>
+            <div class="search-input col-lg-2
+                 col-12">
+                <label for="inputDates" class="form-label">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M22.5 13.5v8.25a.75.75 0 0 1-.75.75H2.25a.75.75 0 0 1-.75-.75V5.25a.75.75 0 0 1 .75-.75h19.5a.75.75 0 0 1 .75.75zm1.5 0V5.25A2.25 2.25 0 0 0 21.75 3H2.25A2.25 2.25 0 0 0 0 5.25v16.5A2.25 2.25 0 0 0 2.25 24h19.5A2.25 2.25 0 0 0 24 21.75zm-23.25-3h22.5a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5M7.5 6V.75a.75.75 0 0 0-1.5 0V6a.75.75 0 0 0 1.5 0M18 6V.75a.75.75 0 0 0-1.5 0V6A.75.75 0 0 0 18 6M5.095 14.03a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06m.53-1.28a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5m-.53 6.53a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06m.53-1.28a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5m5.845-3.97a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06m.53-1.28A1.125 1.125 0 1 0 12 15a1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5m-.53 6.53a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06M12 18a1.125 1.125 0 1 0 0 2.25A1.125 1.125 0 0 0 12 18a.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5m5.845-3.97a.75.75 0 1 0 1.06-1.06.75.75 0 0 0-1.06 1.06m.53-1.28a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5">
+                        </path>
+                    </svg>
+                </label>
+                <input type="text" name="checkOutDate" class="form-control" id="inputDates" placeholder="Check-out Date">
+            </div>
+            <div class="search-input col-lg-2 col-12">
+                <label class="form-label">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 10.25A2.25 2.25 0 1 0 12 6a2.25 2.25 0 0 0 0 4.5m0 1.5a3.75 3.75 0 1 1 0-7.5 3.75 3.75 0 0 1 0 7.5M12 15a4.875 4.875 0 0 0-4.875 4.875v2.25a.75.75 0 0 0 1.5 0v-2.25a3.375 3.375 0 1 1 6.75 0v2.25a.75.75 0 0 0 1.5 0v-2.25A4.875 4.875 0 0 0 12 15M2.25 6a2.25 2.25 0 1 0 0 4.5A2.25 2.25 0 0 0 2.25 6m0 1.5a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5m0 6A4.875 4.875 0 0 0 0 18.375v2.25a.75.75 0 0 0 1.5 0v-2.25a3.375 3.375 0 1 1 6.75 0v2.25a.75.75 0 0 0 1.5 0v-2.25A4.875 4.875 0 0 0 2.25 13.5m19.5-7.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5m0 1.5a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5m0 6A4.875 4.875 0 0 0 17.25 18v2.25a.75.75 0 0 0 1.5 0v-2.25a3.375 3.375 0 1 1 6.75 0v2.25a.75.75 0 0 0 1.5 0v-2.25A4.875 4.875 0 0 0 21.75 13.5">
+                        </path>
+                    </svg>
+                </label>
+                <input type="text" class="form-control" placeholder="1 Adult, 0 Children, 1 Room">
+            </div>
+
+            <button type="submit" class="btn btn-primary search-button col-lg-2 col-12">
+                Search
+            </button>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <aside class="col-md-3">
+            <div class="card">
+                <article class="filter-group">
+                    <header class="card-header">
+                        <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+                            <i class="icon-control fa fa-chevron-down"></i>
+                            <h6 class="titles">Brands </h6>
+                        </a>
+                    </header>
+
+                    <div class="filter-content collapse show" id="collapse_2">
+                        <form asp-action="Index" class="card-body" asp-controller="Group" method="get">
+
+                            @foreach (var category in Model.Categories)
+                            {
+
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" checked="" class="custom-control-input">
+                                    <div class="custom-control-label">
+                                        @category.CategoryName
+                                        <b class="badge badge-pill badge-light float-right">120</b>
+                                    </div>
+                                </label>
+                            }
+
+                            <button type="submit" name="action">Filtrer</button>
+                        </form>
+
+                    </div>
+                </article>
+                <article class="filter-group">
+                    <header class="card-header">
+                        <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+                            <i class="icon-control fa fa-chevron-down"></i>
+                            <h6 class="titles">Price range</h6>
+                        </a>
+                    </header>
+                    <div class="filter-content collapse show" id="collapse_3">
+                        <div class="card-body">
+                            <form asp-action="HotelList" method="get">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Min</label>
+                                        <input name="minPrice" class="form-control" placeholder="$0" type="number">
+                                    </div>
+                                    <div class="form-group text-right col-md-6">
+                                        <label>Max</label>
+                                        <input name="maxPrice" class="form-control" placeholder="$10,000" type="number">
+                                    </div>
+                                </div> 
+                                <button type="submit" class="btn btn-block btn-primary">Apply</button>
+                            </form>
+                        </div>
+                    </div>
+                </article> 
+            </div>
+        </aside>
+        <main class="col-md-9">
+
+            <div class="row">
+                @foreach (var hotel in Model.Hotels)
+                {
+                    <div class="col-md-12">
+                        <figure class=" card-product-grid d-flex">
+                            <a class="bg-white" asp-action="Details" asp-route-id="@hotel.Id">
+                                <div class="img-wrap">
+                                    <img src="@hotel.ImageUrl" class="img-fluid">
+                                </div>
+                            </a>
+                            <figcaption class="info-wrap">
+                                <div class="fix-height">
+                                    <a href="#" class="title">@hotel.Name</a>
+                                    <p>@hotel.Description</p>
+                                    <div class="price-wrap mt-2">
+                                        <span class="price">$@hotel.Price</span>
+                                        <del class="price-old">$1980</del>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                }
+            </div>
+
+        </main>
+    </div>
+</div>
