@@ -87,7 +87,6 @@
 .register-btn {
     width: 100px;
     border: 1px solid #006ce4;
-    height: 35px;
     background-color: white;
     color: #006ce4;
     border-radius: 3px;
@@ -484,8 +483,6 @@
         color: orangered;
     }
 
-/**/
-
 
 .hotel-details {
     margin: 20px;
@@ -525,7 +522,6 @@
     justify-content:center;
 }
 
-/*=====*/
 
 .flexe {
     display: flex;
@@ -583,7 +579,6 @@
     }
 }
 
-/*=====*/
 
 .hotel-categories {
     padding: 20px;
@@ -665,7 +660,6 @@
     }
 }
 
-/*=====*/
 
 
 .comment-item {

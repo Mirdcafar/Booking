@@ -1,4 +1,4 @@
-﻿@model Shop.Models.User
+﻿@model RegisterViewModel
 
 
 <section class="contact">
@@ -8,28 +8,32 @@
                 <h5>Register</h5>
             </div>
             <div class="fadeInUpzer">
-                <form class="main-form" method="post">
+                <form class="main-form" method="post" asp-action="Register">
                     <div class="row">
                         <div class="col-lg-6">
-                            <input asp-for="Name" type="text" placeholder="Name*" class="text-input my-2" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <input asp-for="FullName" type="text" placeholder="FullName*" class="text-input my-2" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input asp-for="Year" type="text" placeholder="Year*" class="text-input my-2" />
+                            <span asp-validation-for="Year" class="text-danger"></span>
                         </div>
                         <div class="col-lg-6">
                             <input asp-for="Email" type="email" placeholder="Email*" class="text-input my-2" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
-                        <div class="col-lg-12 br">
+                        <div class="col-lg-6 br">
                             <input asp-for="Password" type="password" placeholder="Password*" class="text-input my-2" />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
 
                         <div class="col-lg-12">
                             <button type="submit" class="bt-mee">
-                                Send 
+                                Send
                             </button>
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>

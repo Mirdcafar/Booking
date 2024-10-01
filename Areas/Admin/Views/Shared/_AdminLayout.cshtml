@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/product.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fontawesome.com/v4.7.0/assets/font-awesome/css/font-awesome.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg">
+        <div class="container container-fluid colors">
+            <div class="flex">
+                <a class="navbar-brand logo" href="#">Booking.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <button class="transleted">AZE</button>
+                    </li>
+                    <li class="nav-item">
+                        <div class="box">
+                            <div class="roundeds">
+                                <img class="image"
+                                     src="https://cf.bstatic.com/static/img/flags/new/48-squared/us/fa2b2a0e643c840152ba856a8bb081c7ded40efa.png"
+                                     alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a asp-controller="ListProperty" asp-action="Index" class="buttons">List your property</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Register" asp-action="Index" class="btn  register-btn">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Login" asp-action="Index" class="btn  register-btn">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="footer">
+        <div class="bg_color">
+            <div class="container">
+                <div class="display">
+                    <a class="footer-btn" asp-controller="ListProperty" asp-action="Index">List your property</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg">
+            <div class="container">
+                <ul class="ul_buttons">
+                    <li><a href="">Mobile version</a></li>
+                    <li><a href="">Your account</a></li>
+                    <li><a href="">Make changes online to your booking</a></li>
+                    <li><a href="">Customer Service Help</a></li>
+                    <li><a href="">Become an affiliate</a></li>
+                    <li><a href="">Booking.com for Business</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row ">
+                <ul class="col-lg-3 ul_footer">
+                    <li>Countries</li>
+                    <li>Regions</li>
+                    <li>Cities</li>
+                    <li>Districts</li>
+                    <li>Airports</li>
+                    <li>Hotels</li>
+                    <li>Places of interest</li>
+                </ul>
+                <ul class="col-lg-3 ul_footer">
+                    <li>Homes</li>
+                    <li>Apartments</li>
+                    <li>Resorts</li>
+                    <li>Villas</li>
+                    <li>Hostels</li>
+                    <li>B&Bs</li>
+                    <li>Guest Houses</li>
+                </ul>
+                <ul class="col-lg-3 ul_footer">
+                    <li>Unique places to stay</li>
+                    <li>All destinations</li>
+                    <li>All flight destinations</li>
+                    <li>All car rental locations</li>
+                    <li>All vacation destinations</li>
+                    <li>Reviews</li>
+                    <li>Discover monthly stays</li>
+                    <li>Travel articles</li>
+                    <li>Seasonal and holiday deals</li>
+                    <li>Traveller Review Awards</li>
+                </ul>
+                <ul class="col-lg-3 ul_footer">
+                    <li>Coronavirus (COVID-19) FAQs</li>
+                    <li>About Booking.com</li>
+                    <li>Customer Service Help</li>
+                    <li>Partner help</li>
+                    <li>Careers</li>
+                    <li>Sustainability</li>
+                    <li>Press Center</li>
+                    <li>Safety Resource Center</li>
+                    <li>Investor relations</li>
+                    <li>Terms & Conditions</li>
+                    <li>Partner dispute</li>
+                    <li>How We Work</li>
+                    <li>Privacy & cookie statement</li>
+                    <li>Modern Slavery Statement</li>
+                    <li>Human Rights Statement</li>
+                    <li>Corporate contact</li>
+                    <li>Content guidelines and reporting</li>
+                    <li>We Price Match</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="~/js/app.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

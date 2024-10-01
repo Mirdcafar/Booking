@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="container cont mt-5">
-        <form method="post" asp-action="FilterHotels" class="search-container row ">
+        <form method="post" asp-controller="Home" asp-action="Index" class="search-container row ">
             <div class="search-input col-lg-3 col-12">
                 <label for="destination" class="form-label">
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -20,7 +20,7 @@
                         </path>
                     </svg>
                 </label>
-                <select asp-for="Hotels[0].Country" class="form-control" asp-items="ViewBag.Country"></select>
+                <select class="form-control" name="country" asp-items="ViewBag.Country"></select>
             </div>
 
             <div class="search-input col-lg-2 col-12">
@@ -30,7 +30,7 @@
                         </path>
                     </svg>
                 </label>
-                <input type="text" class="form-control" id="inputDates" placeholder="Check-in Date" asp-for="Hotels[0].Country" value="@ViewBag.Message">
+                <input type="text" name="checkInDate" class="form-control" id="inputDates" placeholder="Check-in Date" value="@ViewBag.Message">
             </div>
             <div class="search-input col-lg-2
                  col-12">
@@ -40,7 +40,7 @@
                         </path>
                     </svg>
                 </label>
-                <input type="text" class="form-control" id="inputDates" placeholder="Check-out Date">
+                <input type="text" name="checkOutDate" class="form-control" id="inputDates" placeholder="Check-out Date">
             </div>
             <div class="search-input col-lg-2 col-12">
                 <label class="form-label">
@@ -52,7 +52,7 @@
                 <input type="text" class="form-control" placeholder="1 Adult, 0 Children, 1 Room">
             </div>
 
-            <button type="button" class="btn btn-primary search-button col-lg-2 col-12">
+            <button type="submit" class="btn btn-primary search-button col-lg-2 col-12">
                 Search
             </button>
         </form>
@@ -67,7 +67,7 @@
         {
             <div class="col-lg-3 col-md-6 col-12">
                 <div class="cart">
-                    <a class="bg-white" asp-action="Details" asp-route-id="@hotel.Id">
+                    <a class="bg-white" asp-controller="Details" asp-action="Index" asp-route-id="@hotel.Id">
                     <div class="cart_img">
                             <img src="@hotel.ImageUrl" alt="">
                     </div>
@@ -114,7 +114,7 @@
                         <img src="@category.ImageUrl" alt="@category.CategoryName" />
                     </div>
                     <h4>@category.CategoryName</h4>
-                    <p>endpoint</p> <!-- Use a meaningful property here -->
+                    <p>endpoint</p> 
                 </div>
             }
 
@@ -134,8 +134,8 @@
                 <h3>Get instant discounts</h3>
                 <p>Just sign into your Booking.com account and look for the blue Genius logo to save</p>
                 <div class="d-flex pt-3">
-                    <a asp-controller="Home" asp-action="Login" class="sign_in_btn">Sign in</a>
-                    <a asp-controller="Home" asp-action="Register" class="register_btn">Register</a>
+                    <a asp-controller="Acount" asp-action="Login" class="sign_in_btn">Sign in</a>
+                    <a asp-controller="Acount" asp-action="Register" class="register_btn">Register</a>
                 </div>
             </div>
         </div>
@@ -150,7 +150,7 @@
             @foreach (var hotel in Model.Hotels)
             {
                 <div class="swiper-slide cart">
-                    <a class="bg-white" asp-action="HotelList" asp-route-id="@hotel.Id">
+                    <a class="bg-white" asp-controller="HotelList" asp-action="Index" asp-route-id="@hotel.Id">
                         <div class="cart_img">
                             <img src="@hotel.ImageUrl" alt="">
                         </div>

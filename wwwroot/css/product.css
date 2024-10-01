@@ -1,4 +1,4 @@
-﻿/* General Styles */
+﻿
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
@@ -14,7 +14,6 @@ aside {
     margin-bottom: 30px;
 }
 
-/* Card Styling */
 .card {
     border: 1px solid #ddd;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -35,7 +34,6 @@ aside {
     padding-top: 10px;
 }
 
-/* Custom Checkbox and Radio */
 .custom-control-label {
     font-size: 14px;
     padding-left: 10px;
@@ -58,19 +56,12 @@ aside {
     margin: 5px;
 }
 
-/* Price Range */
 .custom-range {
     width: 100%;
 }
 
-input[type="number"] {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    width: 100%;
-}
 
-/* Product Grid */
+
 .card-product-grid {
     background-color: #fff;
     border-radius: 5px;
@@ -134,7 +125,6 @@ input[type="number"] {
         text-decoration: line-through;
     }
 
-/* Pagination */
 .pagination {
     display: flex;
     justify-content: center;
@@ -155,7 +145,6 @@ input[type="number"] {
         border-color: #007bff;
     }
 
-/* Responsive */
 @media (max-width: 767px) {
     .form-inline {
         flex-direction: column;
