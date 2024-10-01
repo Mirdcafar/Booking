@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Shop.Models;
 
 namespace Shop.Areas.Admin.Controllers;
-[Authorize(Roles = "Admin")]
 [Area("Admin")]
 public class OrdersController : Controller
 {
