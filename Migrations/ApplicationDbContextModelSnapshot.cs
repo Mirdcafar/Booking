@@ -254,7 +254,7 @@ namespace Shop.Migrations
 
                     b.HasIndex("HotelId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Models.HotelCatigories", b =>
@@ -275,7 +275,7 @@ namespace Shop.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HotelCatigories");
+                    b.ToTable("HotelCatigories", (string)null);
 
                     b.HasData(
                         new
@@ -394,7 +394,7 @@ namespace Shop.Migrations
 
                     b.HasIndex("HotelCategoriesId");
 
-                    b.ToTable("Hotels");
+                    b.ToTable("Hotels", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Models.Orders", b =>
@@ -441,7 +441,7 @@ namespace Shop.Migrations
 
                     b.HasIndex("HotelId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

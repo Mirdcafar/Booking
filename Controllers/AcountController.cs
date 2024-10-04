@@ -66,8 +66,7 @@ namespace Shop.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null)
             {
-                if (await _userManager.IsEmailConfirmedAsync(user))
-                {
+                
                     var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, lockoutOnFailure: true);
                     if (result.Succeeded)
                     {
@@ -81,11 +80,7 @@ namespace Shop.Controllers
                     {
                         ModelState.AddModelError("loginForm", "Invalid login attempt.");
                     }
-                }
-                else
-                {
-                    ModelState.AddModelError("loginForm", "Please confirm your email!");
-                }
+                
             }
             else
             {
@@ -99,9 +94,9 @@ namespace Shop.Controllers
 
 
         [HttpGet]
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            _signInManager.SignOutAsync();
+            await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
     }
